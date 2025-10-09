@@ -8,5 +8,14 @@ namespace EJ1.Models
 {
     internal class CSVExportadores
     {
+        public string Exportar(Multa m)
+        {
+            throw new NotImplementedException();
+        }
+        public bool Importar (string data, Multa multa)
+        {
+            string[] Campos = data.Split(';');
+            string patente = Campos [0];
+        }
     }
 }

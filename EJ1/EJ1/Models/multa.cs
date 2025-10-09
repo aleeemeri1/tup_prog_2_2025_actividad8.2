@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace EJ1.Models
@@ -30,17 +29,7 @@ namespace EJ1.Models
 
         public bool Importar(string data, IExportador exportador)
         {
-            Regex r = new Regex(@"");
-            Match m = r.Match(data);
-            if (m.Success)
-            {
-                string patente = m.Groups[1].Value;
-                DateTime vencimiento = DateTime.ParseExact(m.Groups[2].Value, "dd/MM/yyyy");
-                double importe = Convert.ToDouble(m.Groups[3].Value);
-                Multa.Patente = patente;
-                return true;
-            }
-            return false;
+            throw new NotImplementedException();
         }
 
         public override string ToString()

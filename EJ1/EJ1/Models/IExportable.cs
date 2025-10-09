@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace EJ1.Models
 {
-    internal class IExportable
+    public interface IExportable
     {
+        bool Importar(string data, IExportador exportador);
+        string Exportar(IExportador exportador);
     }
 }

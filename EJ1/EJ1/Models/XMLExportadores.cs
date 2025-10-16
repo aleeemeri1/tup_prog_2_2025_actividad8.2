@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -16,9 +17,8 @@ namespace EJ1.Models
             if (m.Success)
             {
                 string patente = m.Groups[1].Value;
-                DateTime vencimiento = DateTime.ParseExact(m.Groups[2].Value, "dd/MM/yyyy"); 
+                DateTime vencimiento = DateTime.ParseExact(patente, "dd/MM/yyyy", CultureInfo.InvariantCulture); 
                 double importe = Convert.ToDouble(m.Groups[3].Value);
-                Multa.Patente = patente;
                 return true;
             }
             return false;
